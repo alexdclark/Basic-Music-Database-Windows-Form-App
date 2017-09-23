@@ -12,7 +12,9 @@ namespace TakeHomeInterview2
 {
     public partial class Form1 : Form 
     {
+        //Creating String container for query string to be modified depending on user input
         string queryString;
+        //Creating instance of SQL Class to allow for connection to the Local DB
         SQL SQLConnect = new SQL();
 
         public Form1()
@@ -22,17 +24,18 @@ namespace TakeHomeInterview2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-     
         }
           
         private void findArtistButton_Click(object sender, EventArgs e)
         { 
+            //Preparing query String for Find Artist by constructing Select statement to find artist with user input
             queryString = "Select * From MusicData WHERE Arist LIKE '" + "%" +findAlbumArtistSearch.Text + "%" +"'";
 
+            //Clearing the Output textbox to prepare for new output
             outputBox.Clear();
+            //Calling the establishConenction function to query the local SQL DB
             outputBox.Text = SQLConnect.establishConnection(queryString);
-            
-            
+           
         }
 
         private void findAlbum_Click(object sender, EventArgs e)
