@@ -30,7 +30,6 @@ namespace TakeHomeInterview2
         { 
             //Preparing query String for Find Artist by constructing Select statement to find artist with user input
             queryString = "Select * From MusicData WHERE Arist LIKE '" + "%" +findAlbumArtistSearch.Text + "%" +"'";
-
             //Clearing the Output textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConenction function to query the local SQL DB
@@ -40,15 +39,21 @@ namespace TakeHomeInterview2
 
         private void findAlbum_Click(object sender, EventArgs e)
         {
+            //Preparing query String for Find Album by constructing Select statement to find artist with user input
             queryString = "Select * From MusicData WHERE AlbumName LIKE '" + "%" + findAlbumArtistSearch.Text + "%" + "'";
+            //Clearing the Output textbox to preapre for new output
             outputBox.Clear();
+            //Calling the establishConenction function to query the local SQL DB
             outputBox.Text = SQLConnect.establishConnection(queryString);
         }
 
         private void completeButton_Click(object sender, EventArgs e)
         {
+            //Preparing query String to insert new arist/album by constructing insert statement with user input
             queryString = "Insert INTO MusicData Values ('" + artistNameInput.Text + "','" + albumNameInput.Text + "'," + albumYearInput.Text + ",'" + noteBox.Text + "');";
+            //Clearing the Output Textbox to prepare for new output
             outputBox.Clear();
+            //Calling the establishConnection function to insert new Arist/Album
             outputBox.Text = SQLConnect.establishConnection(queryString);
         }
     }

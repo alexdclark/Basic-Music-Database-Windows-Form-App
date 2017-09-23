@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.findAlbumArtistSearch = new System.Windows.Forms.TextBox();
             this.findArtistButton = new System.Windows.Forms.Button();
             this.findAlbum = new System.Windows.Forms.Button();
@@ -174,6 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(456, 946);
             this.Controls.Add(this.completeButton);
             this.Controls.Add(this.outputBox);
@@ -189,8 +191,9 @@
             this.Controls.Add(this.findAlbum);
             this.Controls.Add(this.findArtistButton);
             this.Controls.Add(this.findAlbumArtistSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Basic Music Database ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
