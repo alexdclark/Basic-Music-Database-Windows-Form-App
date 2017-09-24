@@ -50,11 +50,12 @@ namespace TakeHomeInterview2
 
                 }
 
-                //If not results are returned I'm adding a no result option.
+                //If not results are returned I'm adding a no result string.
                 if (results == "")
                 {
                     results = "No result found!";
                 }
+
                 //Closing the SQL Reader
                 reader.Close();
                 //Return the result string.

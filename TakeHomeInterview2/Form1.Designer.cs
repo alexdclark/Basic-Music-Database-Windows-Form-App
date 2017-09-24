@@ -176,7 +176,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(456, 777);
             this.Controls.Add(this.completeButton);
             this.Controls.Add(this.outputBox);
@@ -192,7 +192,9 @@
             this.Controls.Add(this.findAlbum);
             this.Controls.Add(this.findArtistButton);
             this.Controls.Add(this.findAlbumArtistSearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Basic Music Database ";
             this.Load += new System.EventHandler(this.Form1_Load);
