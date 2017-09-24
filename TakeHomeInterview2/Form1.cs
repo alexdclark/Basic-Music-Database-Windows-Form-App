@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace TakeHomeInterview2
 {
-    public partial class Form1 : Form 
+    public partial class Form1 : Form
     {
         //Creating String container for query string to be modified depending on user input
         string queryString;
@@ -25,16 +25,16 @@ namespace TakeHomeInterview2
         private void Form1_Load(object sender, EventArgs e)
         {
         }
-          
+
         private void findArtistButton_Click(object sender, EventArgs e)
-        { 
+        {
             //Preparing query String for Find Artist by constructing Select statement to find artist with user input
-            queryString = "Select * From MusicData WHERE Arist LIKE '" + "%" +findAlbumArtistSearch.Text + "%" +"'";
+            queryString = "Select * From MusicData WHERE Arist LIKE '" + "%" + findAlbumArtistSearch.Text + "%" + "'";
             //Clearing the Output textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConenction function to query the local SQL DB
-            outputBox.Text = SQLConnect.establishConnection(queryString);
-           
+            outputBox.Text = SQLConnect.prepareConnection(queryString);
+
         }
 
         private void findAlbum_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace TakeHomeInterview2
             //Clearing the Output textbox to preapre for new output
             outputBox.Clear();
             //Calling the establishConenction function to query the local SQL DB
-            outputBox.Text = SQLConnect.establishConnection(queryString);
+            outputBox.Text = SQLConnect.prepareConnection(queryString);
         }
 
         private void completeButton_Click(object sender, EventArgs e)
@@ -54,7 +54,12 @@ namespace TakeHomeInterview2
             //Clearing the Output Textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConnection function to insert new Arist/Album
-            outputBox.Text = SQLConnect.establishConnection(queryString);
+            outputBox.Text = SQLConnect.prepareConnection(queryString);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

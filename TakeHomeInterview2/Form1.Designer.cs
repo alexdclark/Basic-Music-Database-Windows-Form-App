@@ -56,7 +56,7 @@
             // 
             // findArtistButton
             // 
-            this.findArtistButton.Location = new System.Drawing.Point(12, 99);
+            this.findArtistButton.Location = new System.Drawing.Point(12, 54);
             this.findArtistButton.Name = "findArtistButton";
             this.findArtistButton.Size = new System.Drawing.Size(160, 65);
             this.findArtistButton.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             // findAlbum
             // 
-            this.findAlbum.Location = new System.Drawing.Point(284, 99);
+            this.findAlbum.Location = new System.Drawing.Point(284, 54);
             this.findAlbum.Name = "findAlbum";
             this.findAlbum.Size = new System.Drawing.Size(160, 65);
             this.findAlbum.TabIndex = 2;
@@ -78,16 +78,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 231);
+            this.label1.Location = new System.Drawing.Point(12, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(433, 40);
             this.label1.TabIndex = 3;
             this.label1.Text = "Add a new Album or Artist";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // artistNameLabel
             // 
             this.artistNameLabel.AutoSize = true;
-            this.artistNameLabel.Location = new System.Drawing.Point(43, 320);
+            this.artistNameLabel.Location = new System.Drawing.Point(53, 216);
             this.artistNameLabel.Name = "artistNameLabel";
             this.artistNameLabel.Size = new System.Drawing.Size(92, 20);
             this.artistNameLabel.TabIndex = 4;
@@ -95,7 +96,7 @@
             // 
             // artistNameInput
             // 
-            this.artistNameInput.Location = new System.Drawing.Point(170, 301);
+            this.artistNameInput.Location = new System.Drawing.Point(180, 197);
             this.artistNameInput.Multiline = true;
             this.artistNameInput.Name = "artistNameInput";
             this.artistNameInput.Size = new System.Drawing.Size(230, 50);
@@ -103,7 +104,7 @@
             // 
             // albumNameInput
             // 
-            this.albumNameInput.Location = new System.Drawing.Point(170, 371);
+            this.albumNameInput.Location = new System.Drawing.Point(180, 267);
             this.albumNameInput.Multiline = true;
             this.albumNameInput.Name = "albumNameInput";
             this.albumNameInput.Size = new System.Drawing.Size(230, 50);
@@ -112,7 +113,7 @@
             // albumYearLabel
             // 
             this.albumYearLabel.AutoSize = true;
-            this.albumYearLabel.Location = new System.Drawing.Point(43, 390);
+            this.albumYearLabel.Location = new System.Drawing.Point(53, 286);
             this.albumYearLabel.Name = "albumYearLabel";
             this.albumYearLabel.Size = new System.Drawing.Size(100, 20);
             this.albumYearLabel.TabIndex = 6;
@@ -120,7 +121,7 @@
             // 
             // albumYearInput
             // 
-            this.albumYearInput.Location = new System.Drawing.Point(170, 442);
+            this.albumYearInput.Location = new System.Drawing.Point(180, 338);
             this.albumYearInput.Multiline = true;
             this.albumYearInput.Name = "albumYearInput";
             this.albumYearInput.Size = new System.Drawing.Size(230, 50);
@@ -129,7 +130,7 @@
             // albumYearL
             // 
             this.albumYearL.AutoSize = true;
-            this.albumYearL.Location = new System.Drawing.Point(43, 462);
+            this.albumYearL.Location = new System.Drawing.Point(53, 358);
             this.albumYearL.Name = "albumYearL";
             this.albumYearL.Size = new System.Drawing.Size(92, 20);
             this.albumYearL.TabIndex = 8;
@@ -137,7 +138,7 @@
             // 
             // noteBox
             // 
-            this.noteBox.Location = new System.Drawing.Point(170, 511);
+            this.noteBox.Location = new System.Drawing.Point(180, 407);
             this.noteBox.Multiline = true;
             this.noteBox.Name = "noteBox";
             this.noteBox.Size = new System.Drawing.Size(230, 50);
@@ -146,7 +147,7 @@
             // Notes
             // 
             this.Notes.AutoSize = true;
-            this.Notes.Location = new System.Drawing.Point(43, 530);
+            this.Notes.Location = new System.Drawing.Point(53, 426);
             this.Notes.Name = "Notes";
             this.Notes.Size = new System.Drawing.Size(87, 20);
             this.Notes.TabIndex = 10;
@@ -155,7 +156,7 @@
             // outputBox
             // 
             this.outputBox.Enabled = false;
-            this.outputBox.Location = new System.Drawing.Point(12, 703);
+            this.outputBox.Location = new System.Drawing.Point(12, 536);
             this.outputBox.Multiline = true;
             this.outputBox.Name = "outputBox";
             this.outputBox.Size = new System.Drawing.Size(433, 231);
@@ -163,7 +164,7 @@
             // 
             // completeButton
             // 
-            this.completeButton.Location = new System.Drawing.Point(12, 637);
+            this.completeButton.Location = new System.Drawing.Point(19, 473);
             this.completeButton.Name = "completeButton";
             this.completeButton.Size = new System.Drawing.Size(432, 47);
             this.completeButton.TabIndex = 13;
@@ -176,7 +177,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(456, 946);
+            this.ClientSize = new System.Drawing.Size(456, 777);
             this.Controls.Add(this.completeButton);
             this.Controls.Add(this.outputBox);
             this.Controls.Add(this.noteBox);
