@@ -43,7 +43,7 @@
             this.Notes = new System.Windows.Forms.Label();
             this.outputBox = new System.Windows.Forms.TextBox();
             this.completeButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.xmlConvert = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // findAlbumArtistSearch
@@ -172,15 +172,15 @@
             this.completeButton.UseVisualStyleBackColor = true;
             this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
             // 
-            // button1
+            // xmlConvert
             // 
-            this.button1.Location = new System.Drawing.Point(12, 777);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(433, 38);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Convert to XML";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.xmlConvert.Location = new System.Drawing.Point(12, 777);
+            this.xmlConvert.Name = "xmlConvert";
+            this.xmlConvert.Size = new System.Drawing.Size(433, 38);
+            this.xmlConvert.TabIndex = 14;
+            this.xmlConvert.Text = "Convert to XML";
+            this.xmlConvert.UseVisualStyleBackColor = true;
+            this.xmlConvert.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
@@ -188,7 +188,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(456, 827);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.xmlConvert);
             this.Controls.Add(this.completeButton);
             this.Controls.Add(this.outputBox);
             this.Controls.Add(this.noteBox);
@@ -230,7 +230,7 @@
         private System.Windows.Forms.Label Notes;
         private System.Windows.Forms.TextBox outputBox;
         private System.Windows.Forms.Button completeButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button xmlConvert;
     }
 }
 
