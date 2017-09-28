@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace TakeHomeInterview2
 {
@@ -57,8 +52,29 @@ namespace TakeHomeInterview2
             outputBox.Text = SQLConnect.prepareConnection(queryString);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
         {
+            //Preparing query String to insert new arist/album by constructing insert statement with user input
+            queryString = "Create Table MusicDataNew (ID int identity(1,1), Artist Text, AlbumName Text, AlbumYear int, AlbumDescription Text, PRIMARY KEY (ID))";
+
+            //Clearing the Output Textbox to prepare for new output
+            outputBox.Clear();
+            //Calling the establishConnection function to insert new Arist/Album
+            outputBox.Text = SQLConnect.prepareConnection(queryString);
+        }
+
+       
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            XmlSerializer xmlConvert = new XmlSerializer(typeof(SQL));
+
+            using (TextWriter textWriter = new StreamWriter(@"C:\Users\Alex\musicData.XML"))
+            {
+                xmlConvert.Serialize(textWriter, SQLConnect);
+            }
+
 
         }
     }
