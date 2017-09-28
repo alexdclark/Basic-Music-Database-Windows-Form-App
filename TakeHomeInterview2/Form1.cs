@@ -9,12 +9,14 @@ namespace TakeHomeInterview2
     {
         //Creating String container for query string to be modified depending on user input
         string queryString;
-        //Creating instance of SQL Class to allow for connection to the Local DB
-        SQL SQLConnect = new SQL();
-
+        //Creating instance of Music Database Class to allow for connection to the Local DB and Album Class
+        Album newAlbum = new Album();
+        MusicDatabase musicDatabase = new MusicDatabase();
+        
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,15 +25,17 @@ namespace TakeHomeInterview2
 
         private void findArtistButton_Click(object sender, EventArgs e)
         {
-            //Preparing query String for Find Artist by constructing Select statement to find artist with user input
-            queryString = "Select * From MusicData WHERE Arist LIKE '" + "%" + findAlbumArtistSearch.Text + "%" + "'";
+           
+
+        //Preparing query String for Find Artist by constructing Select statement to find artist with user input
+        queryString = "Select * From MusicData WHERE Arist LIKE '" + "%" + findAlbumArtistSearch.Text + "%" + "'";
             //Clearing the Output textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConenction function to query the local SQL DB
-            outputBox.Text = SQLConnect.prepareConnection(queryString);
+            outputBox.Text = musicDatabase.prepareConnection(queryString, newAlbum);
+            
 
         }
-
         private void findAlbum_Click(object sender, EventArgs e)
         {
             //Preparing query String for Find Album by constructing Select statement to find artist with user input
@@ -39,7 +43,7 @@ namespace TakeHomeInterview2
             //Clearing the Output textbox to preapre for new output
             outputBox.Clear();
             //Calling the establishConenction function to query the local SQL DB
-            outputBox.Text = SQLConnect.prepareConnection(queryString);
+            outputBox.Text = musicDatabase.prepareConnection(queryString,newAlbum);
         }
 
         private void completeButton_Click(object sender, EventArgs e)
@@ -49,7 +53,7 @@ namespace TakeHomeInterview2
             //Clearing the Output Textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConnection function to insert new Arist/Album
-            outputBox.Text = SQLConnect.prepareConnection(queryString);
+            outputBox.Text = musicDatabase.prepareConnection(queryString,newAlbum);
         }
 
 
@@ -61,19 +65,14 @@ namespace TakeHomeInterview2
             //Clearing the Output Textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConnection function to insert new Arist/Album
-            outputBox.Text = SQLConnect.prepareConnection(queryString);
+            outputBox.Text = musicDatabase.prepareConnection(queryString,newAlbum);
         }
 
        
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            XmlSerializer xmlConvert = new XmlSerializer(typeof(SQL));
-
-            using (TextWriter textWriter = new StreamWriter(@"C:\Users\Alex\musicData.XML"))
-            {
-                xmlConvert.Serialize(textWriter, SQLConnect);
-            }
+            
 
 
         }
