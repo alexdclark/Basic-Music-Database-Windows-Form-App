@@ -9,8 +9,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace TakeHomeInterview2
 {
+   
    public class MusicDatabase 
     {
+        List<Album> AlbumList = new List<Album>();
 
         public MusicDatabase()
         { }
@@ -30,6 +32,7 @@ namespace TakeHomeInterview2
             return results;
 
         }
+
 
         //This function opens the connection and executes the SQL Query.
         private string executeQuery(string queryString, Album newAlbum)
@@ -67,6 +70,9 @@ namespace TakeHomeInterview2
                     results = results + "Artist: " + newAlbum.artistName + Environment.NewLine + "Album: " + newAlbum.albumName + Environment.NewLine + "Year: "
                         + newAlbum.albumYear + Environment.NewLine + "Notes: " + newAlbum.albumNotes + Environment.NewLine;
 
+                    AlbumList.Add(newAlbum);
+                    
+
                 }
 
                 //If not results are returned I'm adding a no result string.
@@ -84,6 +90,8 @@ namespace TakeHomeInterview2
             return results;
         }
 
+       
+        
     }
 }
 

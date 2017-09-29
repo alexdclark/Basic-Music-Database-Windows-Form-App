@@ -9,9 +9,11 @@ namespace TakeHomeInterview2
     {
         //Creating String container for query string to be modified depending on user input
         string queryString;
+        string outputText;
         //Creating instance of Music Database Class to allow for connection to the Local DB and Album Class
         Album newAlbum = new Album();
         MusicDatabase musicDatabase = new MusicDatabase();
+        
         
         public Form1()
         {
@@ -32,8 +34,8 @@ namespace TakeHomeInterview2
             //Clearing the Output textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConenction function to query the local SQL DB
-            outputBox.Text = musicDatabase.prepareConnection(queryString, newAlbum);
-            
+            outputText = musicDatabase.prepareConnection(queryString, newAlbum);
+            outputBox.Text = outputText;
 
         }
         private void findAlbum_Click(object sender, EventArgs e)
@@ -43,7 +45,8 @@ namespace TakeHomeInterview2
             //Clearing the Output textbox to preapre for new output
             outputBox.Clear();
             //Calling the establishConenction function to query the local SQL DB
-            outputBox.Text = musicDatabase.prepareConnection(queryString,newAlbum);
+            outputText = musicDatabase.prepareConnection(queryString,newAlbum);
+            outputBox.Text = outputText;
         }
 
         private void completeButton_Click(object sender, EventArgs e)
@@ -53,7 +56,8 @@ namespace TakeHomeInterview2
             //Clearing the Output Textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConnection function to insert new Arist/Album
-            outputBox.Text = musicDatabase.prepareConnection(queryString,newAlbum);
+           outputText = musicDatabase.prepareConnection(queryString,newAlbum);
+            outputBox.Text = outputText;
         }
 
 
@@ -65,7 +69,8 @@ namespace TakeHomeInterview2
             //Clearing the Output Textbox to prepare for new output
             outputBox.Clear();
             //Calling the establishConnection function to insert new Arist/Album
-            outputBox.Text = musicDatabase.prepareConnection(queryString,newAlbum);
+            outputText = musicDatabase.prepareConnection(queryString,newAlbum);
+            outputBox.Text = outputText;
         }
 
        
